@@ -1,0 +1,19 @@
+@import "./_reset";
+@import "./_variables";
+@import "./_mixins";
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  color: $text-color;
+  background-color: $bg-color;
+}
