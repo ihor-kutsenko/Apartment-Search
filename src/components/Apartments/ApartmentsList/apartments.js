@@ -1,8 +1,10 @@
+import qwe from "../../../img/apartments/apartment-1.jpg";
+
 export default [
   {
     id: "5f689a2c09b16000e9a2f47b",
     title: "Delectus et iste.",
-    imgUrl: "Apartment-Search/src/img/apartments/apartment-1.jpg",
+    imgUrl: qwe,
     description:
       "Debitis similique unde et eligendi sapiente in iure blanditiis distinctio. Cum nihil temporibus qui quam aut. Nesciunt qui eveniet eum quam voluptate numquam.",
     rating: 3,
