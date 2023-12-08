@@ -4,6 +4,7 @@
     v-bind:type="type"
     :disabled="loading"
     :class="{ btn: true, 'btn--outlined': outlined }"
+    @click.native="handleButtonClick"
   >
     <Loader v-if="loading" width="38" height="38" class="btn__loader" />
     <span class="btn__content" :class="contentStyle"></span>
@@ -32,12 +33,16 @@ export default {
       default: false,
     },
   },
-
   computed: {
     contentStyle() {
       return {
         "btn__content--hidden": this.loading,
       };
+    },
+  },
+  methods: {
+    handleButtonClick() {
+      console.log("button clicked");
     },
   },
 };

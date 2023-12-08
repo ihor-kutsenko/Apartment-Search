@@ -1,5 +1,5 @@
 <template>
-  <div class="apartments-item">
+  <div class="apartments-item" @click.native="handleItemClick">
     <div class="apartments-item__inner">
       <img :src="imgSrc" alt="" class="apartments-item__photo" />
       <div class="apartments-item__content">
@@ -36,6 +36,11 @@ export default {
     imgSrc: {
       type: String,
       default: "",
+    },
+  },
+  methods: {
+    handleItemClick() {
+      console.log("item clicked");
     },
   },
 };

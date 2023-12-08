@@ -15,6 +15,7 @@
 <script>
 import ApartmentsItem from "../ApartmentsItem/ApartmentsItem.vue";
 import Container from "../../Container/Container.vue";
+
 export default {
   name: "ApartmentsList",
   components: {
