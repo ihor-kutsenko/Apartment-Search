@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Loader from "../Loader/Loader.vue";
+import Loader from "../loader/Loader.vue";
 export default {
   name: "Button",
   components: {
