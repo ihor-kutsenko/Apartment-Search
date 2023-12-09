@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import Button from "./components/button/Button.vue";
-import ApartmentsList from "./components/apartments/apartmentsList/ApartmentsList.vue";
+import Button from "./components/Button/Button.vue";
+import ApartmentsList from "./components/Apartments/ApartmentsList/ApartmentsList.vue";
 import CustomInput from "./components/customInput/CustomInput.vue";
-import Container from "./components/container/Container.vue";
+import Container from "./components/Container/Container.vue";
 import apartments from "./components/apartments/apartmentsList/apartmentsData.js";
 
 export default {
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper {
   display: flex;
   justify-content: space-between;
