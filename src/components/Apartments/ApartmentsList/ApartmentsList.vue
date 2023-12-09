@@ -8,14 +8,14 @@
         :rating="rating"
         :imgSrc="imgUrl"
         :price="price"
-      /></div
-  ></Container>
+      />
+    </div>
+  </Container>
 </template>
 
 <script>
 import ApartmentsItem from "../ApartmentsItem/ApartmentsItem.vue";
 import Container from "../../Container/Container.vue";
-
 export default {
   name: "ApartmentsList",
   components: {

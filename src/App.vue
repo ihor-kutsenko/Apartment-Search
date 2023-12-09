@@ -2,29 +2,48 @@
   <header></header>
 
   <main>
-    <Button>Click </Button>
-    <StarRating :rating="4" />
-    <ApartmentsList :items="apartments" />
+    <Container>
+      <div class="wrapper">
+        <Button>Click </Button>
+        <h2>{{ text }}</h2>
+        <CustomInput v-model="text" />
+      </div>
+
+      <ApartmentsList :items="apartments" />
+    </Container>
   </main>
 </template>
 
 <script>
-import Button from "./components/Button/Button.vue";
-import StarRating from "./components/StarRating/StarRating.vue";
-import ApartmentsList from "./components/Apartments/ApartmentsList/ApartmentsList.vue";
-import apartments from "./components/Apartments/ApartmentsList/apartments";
+import Button from "./components/button/Button.vue";
+import ApartmentsList from "./components/apartments/apartmentsList/ApartmentsList.vue";
+import CustomInput from "./components/customInput/CustomInput.vue";
+import Container from "./components/container/Container.vue";
+import apartments from "./components/apartments/apartmentsList/apartmentsData.js";
 
 export default {
+  name: "App",
   components: {
     Button,
-    StarRating,
     ApartmentsList,
+    CustomInput,
+    Container,
   },
 
   data() {
-    return { apartments };
+    return {
+      text: "",
+      apartments,
+    };
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 60px auto;
+}
+</style>

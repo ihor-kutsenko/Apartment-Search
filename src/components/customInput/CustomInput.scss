@@ -1,0 +1,10 @@
+@import "../../scss/index.scss";
+
+.custom-input {
+  padding: 8px 15px;
+  height: 40px;
+  border: 2px solid $accent-color;
+  font-size: 18px;
+  outline: none;
+  line-height: inherit;
+}
