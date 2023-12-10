@@ -6,6 +6,10 @@
       <div class="wrapper">
         <Button>Click </Button>
         <h2>{{ text }}</h2>
+        <CustomSelect
+          v-model="selectedValue"
+          :items="['name', 'label', 'salary']"
+        />
         <CustomInput v-model="text" />
       </div>
 
@@ -18,6 +22,7 @@
 import Button from "./components/button/Button.vue";
 import ApartmentsList from "./components/apartments/apartmentsList/ApartmentsList.vue";
 import CustomInput from "./components/customInput/CustomInput.vue";
+import CustomSelect from "./components/customSelect/CustomSelect.vue";
 import Container from "./components/Container/Container.vue";
 import apartments from "./components/apartments/apartmentsList/apartmentsData.js";
 
@@ -28,11 +33,13 @@ export default {
     ApartmentsList,
     CustomInput,
     Container,
+    CustomSelect,
   },
 
   data() {
     return {
       text: "",
+      selectedValue: "name",
       apartments,
     };
   },
