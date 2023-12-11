@@ -2,8 +2,9 @@
   <select @change="onChange" v-model="selectedValue" class="custom-select">
     <option
       v-for="item in formattedItems"
-      :value="item.value"
       :key="item.value"
+      :value="item.value"
+      :selected="item.selected"
     >
       {{ item.label }}
     </option>
