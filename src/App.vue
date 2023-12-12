@@ -3,20 +3,20 @@
 
   <main>
     <Container>
-      <ApartmentFilterForm @submit="logger" />
+      <ApartmentFilterForm @submit="logger" class="apartments-filter" />
       <ApartmentsList :items="apartments" />
     </Container>
   </main>
 </template>
 
 <script>
-import Container from "./components/Container/Container.vue";
-import ApartmentFilterForm from "./components/apartments/apartmentFilterForm/ApartmentFilterForm.vue";
-import ApartmentsList from "./components/apartments/apartmentsList/ApartmentsList.vue";
-import apartments from "./components/apartments/apartmentsList/apartmentsData.js";
+import Container from './components/Container/Container.vue';
+import ApartmentFilterForm from './components/apartments/apartmentFilterForm/ApartmentFilterForm.vue';
+import ApartmentsList from './components/apartments/apartmentsList/ApartmentsList.vue';
+import apartments from './components/apartments/apartmentsList/apartmentsData.js';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Container,
     ApartmentFilterForm,
@@ -29,10 +29,10 @@ export default {
   },
   methods: {
     logger(value) {
-      console.log(value, "form value");
+      console.log(value, 'form value');
     },
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" src="./App.scss" scoped></style>

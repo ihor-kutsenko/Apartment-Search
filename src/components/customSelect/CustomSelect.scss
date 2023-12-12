@@ -1,8 +1,10 @@
-@import "../../scss/index.scss";
+@import '../../scss/index.scss';
 
 .custom-select {
   display: inline-block;
   padding: 8px 15px;
+  max-width: 220px;
+  width: 100%;
   height: 40px;
   border: 2px solid $accent-color;
   font-size: 18px;
