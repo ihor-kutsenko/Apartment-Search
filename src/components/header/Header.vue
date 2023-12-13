@@ -8,7 +8,7 @@
 
 <script>
 import Container from '../container/Container.vue';
-import Logo from '../logo/logo.vue';
+import Logo from '../logo/Logo.vue';
 export default {
   name: 'Header',
   components: {
