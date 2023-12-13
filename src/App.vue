@@ -3,8 +3,8 @@
 
   <main>
     <Container>
-      <ApartmentFilterForm @submit="logger" class="apartments-filter" />
-      <ApartmentsList :items="apartments" />
+      <ApartmentFilterForm @submit="handleFilter" class="apartments-filter" />
+      <ApartmentsList :items="filteredApartments" />
     </Container>
   </main>
 </template>
@@ -25,11 +25,29 @@ export default {
   data() {
     return {
       apartments,
+      filters: {
+        city: '',
+        price: '',
+      },
     };
   },
+  computed: {
+    filteredApartments() {
+      // Use Array.filter to apply the filters
+      return this.apartments.filter(apartment => {
+        const cityFilter =
+          !this.filters.city || apartment.location.city === this.filters.city;
+        const priceFilter =
+          !this.filters.price || apartment.price >= Number(this.filters.price);
+
+        return cityFilter && priceFilter;
+      });
+    },
+  },
   methods: {
-    logger(value) {
-      console.log(value, 'form value');
+    handleFilter(filter) {
+      this.filters = { ...this.filters, ...filter };
+      console.log('Filters:', this.filters);
     },
   },
 };
