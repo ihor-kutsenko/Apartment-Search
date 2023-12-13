@@ -4,7 +4,8 @@
   <main>
     <Container>
       <ApartmentFilterForm @submit="handleFilter" class="apartments-filter" />
-      <ApartmentsList :items="filteredApartments" />
+      <p v-if="!filteredApartments.length">No apartments found</p>
+      <ApartmentsList v-else :items="filteredApartments" />
     </Container>
   </main>
 </template>
@@ -47,7 +48,6 @@ export default {
   methods: {
     handleFilter(filter) {
       this.filters = { ...this.filters, ...filter };
-      console.log('Filters:', this.filters);
     },
   },
 };
