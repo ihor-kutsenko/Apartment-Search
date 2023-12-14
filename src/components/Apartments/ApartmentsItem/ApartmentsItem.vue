@@ -8,22 +8,26 @@
           <StarRating :rating="rating" />
         </div>
         <div class="apartments-item__price">UAH {{ price }}</div>
+        <router-link
+          :to="{ name: 'ApartmentPage' }"
+          class="apartments-item__link"
+        ></router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import StarRating from "../../starRating/StarRating.vue";
+import StarRating from '../../starRating/StarRating.vue';
 export default {
-  name: "ApartmentsItem",
+  name: 'ApartmentsItem',
   components: {
     StarRating,
   },
   props: {
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     rating: {
       type: Number,
@@ -35,12 +39,12 @@ export default {
     },
     imgSrc: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   methods: {
     handleItemClick() {
-      console.log("item clicked");
+      console.log('item clicked');
     },
   },
 };
