@@ -4,6 +4,7 @@
       <ApartmentsItem
         v-for="{ id, description, rating, imgUrl, price } in items"
         :key="id"
+        :id="id"
         :description="description"
         :rating="rating"
         :imgSrc="imgUrl"
@@ -14,10 +15,10 @@
 </template>
 
 <script>
-import ApartmentsItem from "../apartmentsItem/ApartmentsItem.vue";
-import Container from "../../container/Container.vue";
+import ApartmentsItem from '../apartmentsItem/ApartmentsItem.vue';
+import Container from '../../container/Container.vue';
 export default {
-  name: "ApartmentsList",
+  name: 'ApartmentsList',
   components: {
     ApartmentsItem,
     Container,

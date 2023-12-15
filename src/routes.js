@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from './pages/Home.vue';
 import ApartmentPage from './pages/Apartment.vue';
+import NotFoundPage from './pages/NotFound.vue';
 import Bar from './pages/Bar.vue';
 
 const routes = [
@@ -11,7 +12,7 @@ const routes = [
     name: 'HomePage',
   },
   {
-    path: '/apartment',
+    path: '/apartments/:id',
     component: ApartmentPage,
     name: 'ApartmentPage',
   },
@@ -19,6 +20,11 @@ const routes = [
     path: '/bar',
     component: Bar,
     name: 'BarPage',
+  },
+  {
+    path: '/:catchAll(.*)',
+    component: NotFoundPage,
+    name: 'NotFoundPage',
   },
 ];
 
