@@ -52,12 +52,18 @@ export default {
 
   &__wrapper {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
+  }
+
+  &__additional-info {
+    margin-left: 30px;
+    max-width: 350px;
+    flex-grow: 0;
+    flex-shrink: 1;
   }
 
   &__owner {
-    min-width: 350px;
-    margin-left: 30px;
+    margin-bottom: 30px;
   }
 }
 </style>

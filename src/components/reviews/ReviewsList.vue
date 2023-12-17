@@ -70,4 +70,39 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+.reviews {
+  font-family: Montserrat;
+
+  &__heading {
+    padding: 20px 20px 10px 20px;
+    background-color: $bg-info-color;
+  }
+
+  &__title {
+    margin-bottom: 7px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat Medium;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__show-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    font-family: Montserrat Medium;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: $bg-info-color;
+  }
+}
+</style>

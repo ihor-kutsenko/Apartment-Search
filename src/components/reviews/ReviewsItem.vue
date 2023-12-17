@@ -21,4 +21,23 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+.reviews-item {
+  padding: 20px;
+  margin-bottom: 2px;
+  background-color: $bg-color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    display: -webkit-box;
+    margin-top: 20px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+}
+</style>
