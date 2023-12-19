@@ -6,8 +6,15 @@
 
 <script>
 export default {
-  name: "container",
+  name: 'container',
 };
 </script>
 
-<style lang="scss" src="./Container.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+</style>

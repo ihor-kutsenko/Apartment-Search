@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "CustomSelect",
+  name: 'CustomSelect',
   props: {
     items: {
       type: Array,
@@ -30,21 +30,35 @@ export default {
         return this.modelValue;
       },
       set(value) {
-        this.$emit("update:modelValue", value);
+        this.$emit('update:modelValue', value);
       },
     },
     formattedItems() {
-      return this.items.map((item) => {
-        return typeof item === "object" ? item : { value: item, label: item };
+      return this.items.map(item => {
+        return typeof item === 'object' ? item : { value: item, label: item };
       });
     },
   },
   methods: {
     onChange(event) {
-      this.$emit("change", event.target.value);
+      this.$emit('change', event.target.value);
     },
   },
 };
 </script>
 
-<style lang="scss" src="./CustomSelect.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+
+.custom-select {
+  display: inline-block;
+  padding: 8px 15px;
+  max-width: 220px;
+  width: 100%;
+  height: 40px;
+  border: 2px solid $accent-color;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
+</style>

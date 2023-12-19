@@ -6,4 +6,4 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./logo.scss" scoped></style>
+<style lang="scss" scoped></style>

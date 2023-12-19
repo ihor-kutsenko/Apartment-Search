@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "CircleLoader",
+  name: 'CircleLoader',
   props: {
     width: {
       type: [Number, String],
@@ -26,7 +26,7 @@ export default {
     },
     color: {
       type: String,
-      default: "#fff",
+      default: '#fff',
     },
   },
 
@@ -38,4 +38,28 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./Loader.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+
+.preloader-icon {
+  stroke-dasharray: 0 250;
+  animation: preloader 4s infinite;
+}
+
+@keyframes preloader {
+  0% {
+    stroke-dasharray: 0 250;
+    transform: rotate(0);
+  }
+
+  50% {
+    stroke-dasharray: 255 250;
+    transform: rotate(650deg);
+  }
+
+  100% {
+    stroke-dasharray: 0 250;
+    transform: rotate(0);
+  }
+}
+</style>

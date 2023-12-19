@@ -18,4 +18,12 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./header.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+
+.header {
+  padding: 16px 0;
+  height: 60px;
+  background-color: $second-color;
+}
+</style>

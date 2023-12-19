@@ -8,4 +8,11 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./footer.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+
+.footer {
+  background-color: $second-color;
+  height: 30px;
+}
+</style>
