@@ -2,10 +2,10 @@
   <Container>
     <div class="apartments-list">
       <ApartmentsItem
-        v-for="{ id, description, rating, imgUrl, price } in items"
+        v-for="{ id, descr, rating, imgUrl, price } in items"
         :key="id"
         :id="id"
-        :description="description"
+        :descr="descr"
         :rating="rating"
         :imgSrc="imgUrl"
         :price="price"

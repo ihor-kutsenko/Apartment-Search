@@ -12,7 +12,7 @@
 import Container from '../components/Container/Container.vue';
 import ApartmentFilterForm from '../components/apartments/apartmentFilterForm/ApartmentFilterForm.vue';
 import ApartmentsList from '../components/apartments/apartmentsList/ApartmentsList.vue';
-import apartments from '../components/apartments/apartmentsList/apartmentsData.js';
+import { getApartmentsList } from '../services/apartmentsAPI';
 
 export default {
   name: 'Homepage',
@@ -23,12 +23,19 @@ export default {
   },
   data() {
     return {
-      apartments,
+      apartments: [],
       filters: {
         city: '',
         price: '',
       },
     };
+  },
+  async created() {
+    try {
+      this.apartments = await getApartmentsList();
+    } catch (error) {
+      console.error('Error fetching apartments:', error);
+    }
   },
   computed: {
     filteredApartments() {

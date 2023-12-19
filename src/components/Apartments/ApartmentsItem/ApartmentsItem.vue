@@ -3,7 +3,7 @@
     <div class="apartments-item__inner">
       <img :src="imgSrc" alt="" class="apartments-item__photo" />
       <div class="apartments-item__content">
-        <p class="apartments-item__description">{{ description }}</p>
+        <p class="apartments-item__description">{{ descr }}</p>
         <div class="apartments-item__rating">
           <StarRating :rating="rating" />
         </div>
@@ -29,7 +29,7 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    descr: {
       type: String,
       default: '',
     },
