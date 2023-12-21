@@ -61,4 +61,18 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./ApartmentFilterForm.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../../scss/index.scss';
+
+.form {
+  display: flex;
+
+  &__select {
+    margin-right: 30px;
+  }
+
+  &__submit {
+    margin-left: auto;
+  }
+}
+</style>

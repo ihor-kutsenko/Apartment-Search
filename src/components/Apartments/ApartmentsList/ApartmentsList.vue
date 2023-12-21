@@ -32,4 +32,13 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./ApartmentsList.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../../scss/index.scss';
+
+.apartments-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+</style>
