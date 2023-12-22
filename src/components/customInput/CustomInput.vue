@@ -69,6 +69,8 @@ export default {
         }
         return hasPassed;
       });
+
+      return this.isValid;
     },
     reset() {
       this.$emit('input', '');

@@ -52,7 +52,6 @@ export default {
   methods: {
     handleSubmit() {
       const isFormValid = this.$refs.form.validate();
-      console.log('Form data before validation:', this.formData);
 
       if (isFormValid) {
         console.log('Form data after validation:', this.formData);

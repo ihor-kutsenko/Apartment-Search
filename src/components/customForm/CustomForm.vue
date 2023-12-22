@@ -22,21 +22,15 @@ export default {
       this.inputs.push(input);
     },
     unRegisterInput(input) {
-      this.inputs = this.inputs.filter(item => item !== input);
+      this.inputs.filter(item => item !== input);
     },
     validate() {
-      console.log('Form is being validated.');
-      return Promise.all(this.inputs.map(input => input.validate())).then(
-        results => {
-          const isValid = results.every(isInputValid => isInputValid);
-          console.log('Is form valid:', isValid);
-          console.log('Form data after validation:', this.inputs);
-          return isValid;
-        }
-      );
+      return this.inputs.reduce((isValid, input) => {
+        const isInputValid = input.validate();
+        return isValid && isInputValid;
+      }, true);
     },
     reset() {
-      console.log('Resetting form...');
       this.inputs.forEach(input => input.reset());
     },
   },
