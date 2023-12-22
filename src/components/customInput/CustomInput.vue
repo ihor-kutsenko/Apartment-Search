@@ -20,6 +20,7 @@ export default {
       error: '',
     };
   },
+  inject: ['form'],
   inheritAttrs: false,
   props: {
     modelValue: String,
@@ -43,9 +44,17 @@ export default {
     },
   },
   watch: {
-    modelValue(value) {
-      this.validate(value);
+    modelValue() {
+      this.validate();
     },
+  },
+  mounted() {
+    if (!this.form) return;
+    this.form.registerInput(this);
+  },
+  beforeDestroy() {
+    if (!this.form) return;
+    this.form.unRegisterInput(this);
   },
   methods: {
     onInput(event) {
@@ -60,6 +69,9 @@ export default {
         }
         return hasPassed;
       });
+    },
+    reset() {
+      this.$emit('input', '');
     },
   },
 };

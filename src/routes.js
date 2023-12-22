@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
+import Login from './pages/Login.vue';
 import HomePage from './pages/Home.vue';
 import ApartmentPage from './pages/Apartment.vue';
 import NotFoundPage from './pages/NotFound.vue';
@@ -10,6 +11,11 @@ const routes = [
     path: '/',
     component: HomePage,
     name: 'HomePage',
+  },
+  {
+    path: '/login',
+    component: Login,
+    name: 'LoginPage',
   },
   {
     path: '/apartments/:id',
