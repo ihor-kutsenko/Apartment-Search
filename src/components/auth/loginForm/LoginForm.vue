@@ -23,18 +23,18 @@
 </template>
 
 <script>
-import CustomForm from '../customForm/CustomForm.vue';
-import CustomInput from '../customInput/CustomInput.vue';
-import Button from '../button/Button.vue';
-import AuthContainer from '../auth/AuthContainer.vue';
-import Title from '../title/Title.vue';
+import CustomForm from '../../customForm/CustomForm.vue';
+import CustomInput from '../../customInput/CustomInput.vue';
+import Button from '../../button/Button.vue';
+import AuthContainer from '../AuthContainer.vue';
+import Title from '../../title/Title.vue';
 
 import {
   emailValidation,
   passwordValidation,
   isRequired,
-} from '../../utils/validationRules.js';
-import { loginUser } from '../../services/auth.js';
+} from '../../../utils/validationRules.js';
+import { loginUser } from '../../../services/auth.js';
 
 export default {
   name: 'LoginForm',

@@ -1,19 +1,19 @@
 <template>
-  <main class="login">
+  <main class="registration">
     <AuthSection>
-      <LoginForm />
+      <RegisterForm />
     </AuthSection>
   </main>
 </template>
 
 <script>
-import LoginForm from '../components/auth/loginForm/LoginForm.vue';
 import AuthSection from '../components/auth/AuthSection.vue';
+import RegisterForm from '../components/auth/registerForm/RegisterForm.vue';
 export default {
-  name: 'SignInPage',
+  name: 'SignUpPage',
   components: {
-    LoginForm,
     AuthSection,
+    RegisterForm,
   },
 };
 </script>
