@@ -20,7 +20,11 @@ export default {
       error: '',
     };
   },
-  inject: ['form'],
+  inject: {
+    form: {
+      default: null,
+    },
+  },
   inheritAttrs: false,
   props: {
     modelValue: String,
@@ -83,12 +87,13 @@ export default {
 @import '../../scss/index.scss';
 .wrapper-input {
   position: relative;
+  display: inline-flex;
 }
 
 .custom-input {
   padding: 8px 15px;
   height: 40px;
-  max-width: 220px;
+  /* max-width: 220px; */
   width: 100%;
   border: 2px solid $accent-color;
   font-size: 18px;

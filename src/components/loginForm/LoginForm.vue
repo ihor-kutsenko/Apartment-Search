@@ -1,30 +1,49 @@
 <template>
-  <CustomForm ref="form" @submit.prevent="handleSubmit" class="form">
-    <CustomInput v-model="formData.email" name="email" :rules="emailRules" />
-    <CustomInput
-      v-model="formData.password"
-      name="password"
-      :rules="passwordRules"
-    />
-    <Button type="submit">Login</Button>
-  </CustomForm>
+  <AuthContainer class="login">
+    <Title class="login__title">Sign In</Title>
+    <CustomForm ref="form" @submit.prevent="handleSubmit" class="login__form">
+      <CustomInput
+        v-model="formData.email"
+        placeholder="Email"
+        name="email"
+        :rules="emailRules"
+        class="login__input"
+      />
+      <CustomInput
+        v-model="formData.password"
+        placeholder="Password"
+        type="password"
+        name="password"
+        :rules="passwordRules"
+        class="login__input"
+      />
+      <Button type="submit" class="login__button">Sign In</Button>
+    </CustomForm>
+  </AuthContainer>
 </template>
 
 <script>
 import CustomForm from '../customForm/CustomForm.vue';
 import CustomInput from '../customInput/CustomInput.vue';
 import Button from '../button/Button.vue';
+import AuthContainer from '../auth/AuthContainer.vue';
+import Title from '../title/Title.vue';
+
 import {
   emailValidation,
   passwordValidation,
   isRequired,
 } from '../../utils/validationRules.js';
+import { loginUser } from '../../services/auth.js';
+
 export default {
   name: 'LoginForm',
   components: {
     CustomForm,
     CustomInput,
     Button,
+    AuthContainer,
+    Title,
   },
   data() {
     return {
@@ -46,15 +65,21 @@ export default {
       return [this.rules.isRequired, this.rules.emailValidation];
     },
     passwordRules() {
-      return [this.rules.isRequired, this.rules.passwordValidation];
+      return [this.rules.isRequired];
     },
   },
   methods: {
-    handleSubmit() {
+    async handleSubmit() {
       const isFormValid = this.$refs.form.validate();
 
       if (isFormValid) {
-        console.log('Form data after validation:', this.formData);
+        try {
+          const { data } = await loginUser(this.formData);
+          console.log('Form data after validation:', this.formData);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
       }
     },
   },
@@ -62,9 +87,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form {
-  display: flex;
-  gap: 15px;
-  padding: 15px;
+.login {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__button {
+    margin-top: 15px;
+    width: 100%;
+  }
 }
 </style>

@@ -1,4 +1,6 @@
-<template><img src="../../img/logo.svg" alt="logo" /></template>
+<template>
+  <img src="../../img/logo.svg" alt="logo" width="123" height="28" />
+</template>
 
 <script>
 export default {
