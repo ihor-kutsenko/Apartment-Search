@@ -4,6 +4,7 @@
       @input="onInput"
       v-model="internalValue"
       v-bind="$attrs"
+      @blur="blurHandler"
       class="custom-input"
       :class="!isValid && 'custom-input--error'"
     />
@@ -18,6 +19,7 @@ export default {
     return {
       isValid: true,
       error: '',
+      isFirstInput: true,
     };
   },
   inject: {
@@ -49,6 +51,7 @@ export default {
   },
   watch: {
     modelValue() {
+      if (this.isFirstInput) return;
       this.validate();
     },
   },
@@ -76,7 +79,15 @@ export default {
 
       return this.isValid;
     },
+    blurHandler() {
+      if (this.isFirstInput) {
+        this.validate;
+      }
+      this.isFirstInput = false;
+    },
     reset() {
+      this.isFirstInput = true;
+      this.isValid = true;
       this.$emit('update:modelValue', '');
     },
   },
