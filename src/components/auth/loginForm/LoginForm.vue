@@ -82,7 +82,11 @@ export default {
           console.log('Form data after validation:', this.formData);
           console.log(data);
         } catch (error) {
-          console.log(error);
+          this.$notify({
+            type: 'error',
+            title: 'Error',
+            text: error.message,
+          });
         } finally {
           this.loading = false;
         }
