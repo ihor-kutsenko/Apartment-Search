@@ -17,7 +17,9 @@
         :rules="passwordRules"
         class="login__input"
       />
-      <Button type="submit" class="login__button">Sign In</Button>
+      <Button type="submit" class="login__button" :loading="loading"
+        >Sign In</Button
+      >
     </CustomForm>
   </AuthContainer>
 </template>
@@ -47,6 +49,7 @@ export default {
   },
   data() {
     return {
+      loading: false,
       formData: {
         email: '',
         password: '',
@@ -74,11 +77,14 @@ export default {
 
       if (isFormValid) {
         try {
+          this.loading = true;
           const { data } = await loginUser(this.formData);
           console.log('Form data after validation:', this.formData);
           console.log(data);
         } catch (error) {
           console.log(error);
+        } finally {
+          this.loading = false;
         }
       }
     },
