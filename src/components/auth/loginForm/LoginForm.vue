@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import CustomForm from '../../customForm/CustomForm.vue';
 import CustomInput from '../../customInput/CustomInput.vue';
 import Button from '../../button/Button.vue';
@@ -71,6 +73,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions('auth', ['loginUser']),
     async handleSubmit() {
       const { form } = this.$refs;
       const isFormValid = form.validate();
@@ -78,7 +81,7 @@ export default {
       if (isFormValid) {
         try {
           this.loading = true;
-          await this.$store.dispatch('login', this.formData);
+          await this.loginUser(this.formData);
 
           this.$router.push({ name: 'HomePage' });
           form.reset();
