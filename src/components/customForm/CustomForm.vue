@@ -31,7 +31,6 @@ export default {
       }, true);
     },
     reset() {
-      console.log('Resetting form...');
       this.inputs.forEach(input => input.reset());
     },
   },

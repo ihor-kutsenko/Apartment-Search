@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Container from '../components/Container/Container.vue';
+import Container from '../components/container/Container.vue';
 import ApartmentFilterForm from '../components/apartments/apartmentFilterForm/ApartmentFilterForm.vue';
 import ApartmentsList from '../components/apartments/apartmentsList/ApartmentsList.vue';
 import { getApartmentsList } from '../services/apartmentsAPI';

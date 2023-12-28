@@ -17,9 +17,9 @@ export default {
     Footer,
     Notifications,
   },
-  mounted() {
-    console.log(this.$store.getters['auth/isLogin']);
-  },
+  // mounted() {
+  //   console.log(this.$store.getters['auth/isLogin']);
+  // },
 };
 </script>
 

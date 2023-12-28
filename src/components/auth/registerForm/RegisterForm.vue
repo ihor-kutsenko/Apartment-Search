@@ -1,6 +1,6 @@
 <template>
   <AuthContainer class="registration">
-    <Title class="registration__title">Sign Up</Title>
+    <Title class="registration__title">Registration</Title>
     <CustomForm
       ref="form"
       @submit.prevent="handleSubmit"
@@ -37,7 +37,7 @@
         class="registration__input"
       />
       <Button type="submit" class="registration__button" :loading="loading"
-        >Sign Up</Button
+        >Registration</Button
       >
     </CustomForm>
   </AuthContainer>

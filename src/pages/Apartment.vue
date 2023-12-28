@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Container from '../components/Container/Container.vue';
+import Container from '../components/container/Container.vue';
 import ApartmentsInfo from '../components/apartments/ApartmentsInfo.vue';
 import ApartmentsOwner from '../components/apartments/ApartmentsOwner.vue';
 import ApartmentsList from '../components/reviews/ReviewsList.vue';

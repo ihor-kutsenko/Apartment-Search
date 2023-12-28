@@ -1,6 +1,6 @@
 <template>
   <AuthContainer class="login">
-    <Title class="login__title">Sign In</Title>
+    <Title class="login__title">Login</Title>
     <CustomForm ref="form" @submit.prevent="handleSubmit" class="login__form">
       <CustomInput
         v-model="formData.email"
@@ -18,7 +18,7 @@
         class="login__input"
       />
       <Button type="submit" class="login__button" :loading="loading"
-        >Sign In</Button
+        >Login</Button
       >
     </CustomForm>
   </AuthContainer>
