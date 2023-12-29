@@ -19,7 +19,9 @@
     </button>
     <ul class="account-actions__list" v-show="isOpen">
       <li class="account-actions__item">
-        <router-link class="account-actions__link" :to="{}">Orders</router-link>
+        <router-link class="account-actions__link" :to="{ name: 'OrdersPage' }"
+          >Orders</router-link
+        >
       </li>
       <li class="account-actions__item">
         <button @click="logOut" class="account-actions__logout">LogOut</button>

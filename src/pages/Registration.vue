@@ -10,7 +10,7 @@
 import AuthSection from '../components/auth/AuthSection.vue';
 import RegisterForm from '../components/auth/registerForm/RegisterForm.vue';
 export default {
-  name: 'SignUpPage',
+  name: 'RegistrationPage',
   components: {
     AuthSection,
     RegisterForm,

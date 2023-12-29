@@ -4,8 +4,8 @@ import LoginPage from './pages/Login.vue';
 import RegistrationPage from './pages/Registration.vue';
 import HomePage from './pages/Home.vue';
 import ApartmentPage from './pages/Apartment.vue';
+import OrdersPage from './pages/Orders.vue';
 import NotFoundPage from './pages/NotFound.vue';
-import Bar from './pages/Bar.vue';
 
 const routes = [
   {
@@ -29,9 +29,9 @@ const routes = [
     name: 'ApartmentPage',
   },
   {
-    path: '/bar',
-    component: Bar,
-    name: 'BarPage',
+    path: '/orders',
+    component: OrdersPage,
+    name: 'OrdersPage',
   },
   {
     path: '/:catchAll(.*)',
