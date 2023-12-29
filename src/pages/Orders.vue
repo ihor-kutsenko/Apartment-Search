@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Container from '../components/container/container.vue';
+import Container from '../components/container/Container.vue';
 import OrdersList from '../components/orders/OrdersList.vue';
 import Title from '../components/title/Title.vue';
 
