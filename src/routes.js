@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-import LoginPage from './pages/Login.vue';
-import RegistrationPage from './pages/Registration.vue';
-import HomePage from './pages/Home.vue';
-import ApartmentPage from './pages/Apartment.vue';
-import OrdersPage from './pages/Orders.vue';
 import NotFoundPage from './pages/NotFound.vue';
+
+const HomePage = () => import('./pages/Home.vue');
+const LoginPage = () => import('./pages/Login.vue');
+const RegistrationPage = () => import('./pages/Registration.vue');
+const ApartmentPage = () => import('./pages/Apartment.vue');
+const OrdersPage = () => import('./pages/Orders.vue');
 
 import store from './store/store.js';
 
