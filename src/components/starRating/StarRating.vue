@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "StarRating",
+  name: 'StarRating',
   props: {
     rating: {
       type: Number,
@@ -39,4 +39,40 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./StarRating.scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../scss/index.scss';
+
+.star-rating {
+  position: relative;
+  display: inline-flex;
+
+  &__colored {
+    display: inline-flex;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+}
+.star {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 3px;
+  flex-shrink: 0;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &--colored {
+    background: url('../../img/star-yellow.svg') center no-repeat;
+  }
+
+  &--outlined {
+    background: url('../../img/star-outlined.svg') center no-repeat;
+  }
+}
+</style>
