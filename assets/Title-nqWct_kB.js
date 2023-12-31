@@ -1,1 +1,0 @@
-import{_ as a,o as s,h as o,d as r,i as n,y as c}from"./index-0TGTOGH5.js";const l={name:"Title",props:{level:{type:Number,default:1}},computed:{tagName(){return`h${this.level}`}}};function d(e,p,i,u,_,t){return s(),o(c(t.tagName),{class:"title"},{default:r(()=>[n(e.$slots,"default",{},void 0,!0)]),_:3})}const m=a(l,[["render",d],["__scopeId","data-v-a46cfe96"]]);export{m as T};
